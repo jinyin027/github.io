@@ -1,11 +1,478 @@
 <!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	<h1>hello World</h1>
-	<h4>nice to see u</h4>
-</body>
+<html ng-app="myApp">
+	<head>
+		<title>Happy Moment</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/HappyMoment.css">
+		 <link rel="stylesheet" href="css/carousel.css" />
+		 <script src="js/angular.js"></script>
+		 <!--  <link rel="stylesheet" href="css/carousel_11.css" /> -->
+		<link rel="icon " href="imgs/HF.jpg"/>
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+	<a name="top" id="totop" ></a>
+
+   <div id="header">
+		<header id="top">
+		   <!--LOGO图片-->
+		   <a href="#"><img src="imgs/HM.png"></a>
+			<div id="search_box">
+				<datalist id="d1">
+					<option>婚纱照</option>
+					<option>亲子照</option>
+					<option>宝宝照</option>
+					<option>全家福</option>
+				</datalist>
+				<input list="d1" type="text" placeholder="您想拍的照片类型" class="search"><button onclick="search()" id="btn">搜索</button>
+			</div>
+			<ul class="list">
+				<li><a href="">首页</a></li>
+				<li><b></b><a href="#weddingphoto">婚纱照</a></li>
+				<li><b></b><a href="HappyFamily.html">全家福</a></li>
+				<!--<li><b></b><a href="">情侣照</a></li>-->
+				<li><b></b><a href="HappyMama.html">孕妈照</a></li>
+				<!--<li><b></b><a href="">个人写真</a></li>-->
+				<li><b></b><a href="HappyBaby.html">宝宝照</a></li>
+			</ul>
+		</header>	
+		<!-- 2、主导航NAV -->
+		<nav id="nav">
+			<ul class="navUl">
+				<li class="father" >
+					<a href="#">首页/home</a>
+				<!--弹出菜单-->
+					<ul class="ulChild">
+						<li>
+							<a href="#mainBody">婚纱摄影</a>
+						</li>
+						<li>
+							<a href="#">手机版</a>
+						</li>
+					</ul>
+				</li>				
+				<li class="father">
+				    <a href="#">企业背景/about</a>
+					<!--弹出菜单-->
+					<ul class="ulChild">
+						<li><a href="#servicetrips">服务小贴士</a></li>
+							<li><a href="#">品牌优势</a></li>
+							<li><a href="#">服务流程</a></li>
+							<li><a href="business.html">经营理念</a></li>
+							<li><a href="Statistical table.html">婚纱摄影统计表</a>
+						</li>
+					</ul>	
+				
+				<li class="father">
+					<a href="#">作品欣赏/works</a>
+					<!--弹出菜单-->
+					<ul class="ulChild">
+							<li><a href="#">外景婚纱照</a></li>
+							<li><a href="#">内景婚纱照</a></li>
+							<!--<li><a href="#">个人写真</a></li>-->
+							<li><a href="HappyFamily.html">全家福</a></li>
+							<li><a href="HappyMama.html">孕妈照</a></li>
+							<li><a href="HappyBaby.html">宝宝照</a></li>
+					</ul>
+				</li>
+				<li><a href="#">场景介绍/location</a></li>
+				<li><a href="#">最美新娘/bride</a></li>
+				<li class="father">
+					<a href="#">新闻活动/news</a>
+					<!--弹出菜单-->
+					<ul class="ulChild">
+							<li><a href="#">幸福瞬间最新优惠</a></li>
+							<li><a href="#">幸福瞬间新闻资讯</a></li>
+							<li><a href="#">婚纱摄影注意事项</a></li>
+							<li><a href="#">水下婚纱照</a></li>
+							<li><a href="#">婚纱照最新风格</a></li>
+							<li><a href="#">婚纱照风格</a></li>
+					</ul>
+				</li>
+				<li><a href="#">婚纱礼服/dress</a></li>
+			</ul>
+			 <div class="clear"></div><!--清除overflow带来的影响-->
+		</nav>			
+   </div>	
+		<!-- 3、banner广告:banner -->
+	<div id="banner"></div>
+		<!-- 4、主体内容:main-->
+	  <section id="mainbody">
+		  <div id="main">
+			  <ul class="mainUl">
+				  <li>
+					  <img src="imgs/qq.png">
+					  <h2>联系QQ客服</h2>
+					  <h6>及时沟通8:30~22:00</h6>
+				  </li>
+				  <li>
+					  <img src="imgs/wb.png">
+					  <h2>欢迎关注微博</h2>
+					  <h6>微博号@幸福瞬间婚纱摄影</h6>
+				  </li>
+				  <li>
+					  <img src="imgs/wx.png">
+					  <h2>欢迎订阅微信</h2>
+					  <h6>微信号:13423932408</h6>
+				  </li>
+				  <li>
+					  <img src="imgs/xn.png">
+					  <h2>最美新娘通道</h2>
+					  <h6>为幸福加油</h6>
+				  </li>
+				  <img src="imgs/ewm.png">
+			  </ul>
+			  <div class="clear"></div>
+		  </div>
+		  <!--New Style 最新三大风格-->
+		  <div id="mainBody">
+			 <div class="title" id="weddingphoto">
+				 <p>NewStyle/<span>最新三大风格</span></p>				
+		  </div>
+		  <!--个性中国风三幅图片-->
+		  <div class="picture">
+			  <dl>
+				  <dt><img src="imgs/newStyle1.jpg"></dt>
+				  <dd><h2>油轮蜜月旅拍</h2>
+					  <p id="p1">五星级礼遇金牌团队全程6对1贴心服务</p>
+					  <p>韩国H2O空气祼妆,韩国品牌男装男神气场四射</p>
+					  <p id="p3">甄选属于您心中最美的婚纱</p>
+				  </dd>
+			  </dl>
+			  <dl>
+				  <dt><img src="imgs/newStyle2.jpg"></dt>
+				  <dd><h2>个性中国风</h2>
+					  <p  id="p1">2016年全新中国风特别创意,对古典之美进行现场解读</p>
+					  <p>龙凤褂，蕾丝镂空裙，红灯笼，红色背景，红木座椅</p>
+					  <p id="p3">中国红民族风引领个性潮流，变身时尚中国新娘</p>
+				  </dd>
+			  </dl>
+			  <dl>
+				  <dt><img src="imgs/newStyle3.jpg"></dt>
+				  <dd>
+					  <h2>创意水下摄影</h2>
+					  <p id="p1">干净环保的放心水质，四季均可拍摄的恒温基地</p>
+					  <p>360°周密安全的防护措施，不会游泳也能纵情拍摄</p>
+					  <p id="p3">心随泳动，畅拍蔚蓝</p>
+				  </dd>
+			  </dl>
+		  </div>
+		  </div>
+		  <!-- 最新原创主题发布-->
+		  <div class="title">
+			  <p>Originality Theme/<span>最新原创主题发布</span></p>
+			  <span><a href="#">深圳婚纱照欣赏</a>
+					<a href="#">婚纱摄影注意事项</a>
+				  <a href="#">深圳婚纱照</a>
+				  <a href="#">限时活动抢先知</a></span>	 
+		  </div>
+		  <!--五副大图五副小图-->
+		  <div>
+		  <div id="orig1" ng-controller="myCtrl">
+			  <img ng-src="imgs/{{imgList[index]}}" >
+		  </div>
+
+		 		 <div class="orig_small">
+			  	<a href="#"><img src="imgs/orig_small1.jpg"></a>
+			 	 <a href="#"><img src="imgs/orig_small2.jpg"></a>
+			 	 <a href="#"><img src="imgs/orig_small3.jpg"></a>
+			  	<a href="#"><img src="imgs/orig_small4.jpg"></a>
+			  	<a href="#"><img src="imgs/orig_small5.jpg"></a>
+		 		 </div>
+		  </div>
+
+		   <!-- 最新作品欣赏-->
+		  <div class="title">
+			  <p>New Workers/<span>最新作品欣赏</span></p>
+			  <span><a href="#">外景婚纱照</a>
+					<a href="#">内景婚纱照</a>
+				  <a href="#">个人写真</a>
+				  <a href="#">孕妈照</a>
+				  <a href="#">宝宝照</a>
+				  <a href="#">最新活动在线抢先知</a>
+				  </span>
+		  </div>
+		  <ul class="NW">
+		  	<li>
+			<div class="eight">
+		  		<img src="imgs/NW1.jpg" >
+				<div class="mask">
+					<h3>荷兰风情</h3>
+				</div>	
+			</div>
+				<div class="style">
+					<p>荷兰风情</p>
+		  			<p>sky photography</p>
+				</div>
+		  	</li>
+			<li>
+		  		<div class="eight">
+		  		<img src="imgs/NW2.jpg" >
+				<div class="mask">
+					<h3>梦幻影城</h3>
+				</div>	
+			</div>
+				<div class="style">
+					<p>梦幻影城</p>
+		  			<p>sky photography</p>
+				</div>
+		  	</li>
+			<li>
+		  		<div class="eight">
+		  		<img src="imgs/NW3.jpg" >
+				<div class="mask">
+					<h3>布拉格城堡</h3>
+				</div>	
+			</div>
+				<div class="style">
+					<p>布拉格城堡</p>
+		  			<p>sky photography</p>
+				</div>
+		  	</li>
+			<li>
+		  		<div class="eight">
+		  		<img src="imgs/NW4.jpg" >
+				<div class="mask">
+					<h3>浪漫爱琴海</h3>
+				</div>	
+			</div>
+				<div class="style">
+					<p>浪漫爱琴海</p>
+		  			<p>sky photography</p>
+				</div>
+		  	</li>
+			<li>
+		  		<div class="eight">
+		  		<img src="imgs/NW5.jpg" >
+				<div class="mask">
+					<h3>临海泳池</h3>
+				</div>	
+			</div>
+				<div class="style">
+					<p>临海泳池</p>
+		  			<p>sky photography</p>
+				</div>
+		  	</li>
+			<li>
+		  		<div class="eight">
+		  		<img src="imgs/NW6.jpg" >
+				<div class="mask">
+					<h3>唯美DE拉菲城堡</h3>
+				</div>	
+			</div>
+				<div class="style">
+					<p>唯美DE拉菲城堡</p>
+		  			<p>sky photography</p>
+				</div>
+		  	</li>
+			<li>
+		  		<div class="eight">
+		  		<img src="imgs/NW7.jpg" >
+				<div class="mask">
+					<h3>韩国甜美风</h3>
+				</div>	
+			</div>
+				<div class="style">
+					<p>韩国甜美风</p>
+		  			<p>sky photography</p>
+				</div>
+		  	</li>
+			<li>
+		  		<div class="eight">
+		  		<img src="imgs/NW8.jpg" >
+				<div class="mask">
+					<h3>不一样的复古风</h3>
+				</div>	
+			</div>
+				<div class="style">
+					<p>不一样的复古风</p>
+		  			<p>sky photography</p>
+				</div>
+		  	</li>
+		  </ul>
+		   <!-- 最新作品欣赏-->
+		  <div class="title">
+			  <p>New Location/<span>品鉴十大婚纱照系列</span></p>
+		  </div>
+		   <div id="list">
+			   <div id="imgList" style="min-height: 300px; width: 1240px;" ng-controller="myCtrl2">
+				 <img ng-src="imgs/{{imgList[index]}}">				
+					   </div>
+			   <div id="text">
+				   <p>10大经典婚纱照系列<span>涵盖了20多处外景婚纱摄影路线；</span>不用东奔西走，幸福瞬间一站式为您定制</p>
+				   <p>幸福瞬间摄影推荐:独家欧洲小镇<span>尊享外景，内景一站式拍摄！省事省力又省心........</span></p>
+			   </div>
+		   </div>
+		  <!-- 最新作品欣赏-->
+		  <div class="title">
+			  <p>Most beautiful bride/<span>最美新娘,为幸福点赞</span></p>
+		  </div>
+		  <div id="clientPhoto">
+			  <div class="blue">
+				  <h3>为最美新娘点赞</h3>
+				  <div id="hot" ng-controller="myCtrl3">
+					  <ul>
+						  <li><p>{{number1}}</p></li>
+						  <li><p>{{number2}}</p></li>
+						  <li><p>{{number3}}</p></li>
+						  <li><p>{{number4}}</p></li>
+						  <li><p>{{number5}}</p></li>
+					  </ul>
+				  </div>
+			  </div>
+		  </div>
+		  <ul id="four-imgs">
+			  <li>
+			        <div class="img">
+					<img src="imgs/FM1.jpg" >
+					<div class="four"></div>
+					</div>
+			  </li>
+			  <li>
+					<div class="img">
+					<img src="imgs/FM2.jpg" >
+					<div class="four"></div>
+					</div>
+				</li>
+				<li>
+					<div class="img">
+					<img src="imgs/FM3.jpg" >
+					<div class="four"></div>
+					</div>
+				</li>
+				<li>
+					<div class="img">
+					<img src="imgs/FM4.jpg" >
+					<div class="four"></div>
+					</div>
+				</li>			  
+		  </ul>
+		  <!-- 为什么幸福瞬间享誉国内外-->
+		  <div class="title">
+			  <p>Hight-end products/<span>为什么幸福瞬间享誉国内外</span></p>
+		  </div>
+		  <ul class="why">
+			  <li><img src="imgs/why.jpg"></li>
+			  <li><img src="imgs/why.jpg"></li>
+			  <li><img src="imgs/why.jpg"></li>
+			  <li><img src="imgs/why.jpg"></li>
+		  </ul>
+		  <div class="smallbanner"><img src="imgs/24h.jpg"></div>
+		  </div>
+		  <div class="clear"></div>
+		  <!-- 5、:foot_box -->
+
+		  <div id="service">
+			  <div class="left" id="servicetrips">
+				  <p>服务小贴士</p>
+				  <p>SERVICE TIPS</p>
+				  <ul>
+					  <li><a href="#">婚纱摄影怎样可以拍得好</a></li>
+					  <li><a href="#">照婚纱照前的准备是不容忽视的</a></li>
+					  <li><a href="#">笑出完美婚纱照</a></li>
+				  </ul>
+			  </div>
+			  <div class="right">
+				  <ul>
+					  <li>
+						  <p>时尚新娘的时尚婚纱照 发型的改变</p>
+						  <p>时尚婚纱照 有一款属于时尚的发型，想有一种独特魅力的气质，那就从
+						  改变发型开始吧......</p>
+						  <p>READ MORE TIPS++</p>
+					  </li>
+					  <li>
+						  <p>新娘夏日的美妆大法</p>
+						  <p>盛夏新娘的美妆大法从以下三大发则出发，来打造抢眼的魅力新娘妆。撞色法则....
+						  </p>
+						  <p>READ MORE TIPS++</p>
+					  </li>
+					  <li>
+						  <p>深圳婚纱摄影 海景婚纱摄影要抓住</p>
+						  <p>在外景婚纱照料流行的今天，海景婚纱照受到了许多新人的追捧和青睐。碧蓝的大海，金色的海滩
+							  ，唯美的夕阳....
+						  </p>
+						  <p>READ MORE TIPS++</p>
+					  </li>
+					  <li>
+						  <p>婚纱必备搭配</p>
+						  <p>相信每个女生都有这样美好的愿望，就是穿上世界上最美的婚纱嫁给他，不管婚纱是不是最美，但....
+						  </p>
+						  <p>READ MORE TIPS++ </p>
+					  </li>
+					  <li>
+						  <p>90后个性婚纱照的风格 专属于你</p>
+						  <p>现如今90后已成为步入婚姻殿堂的主力军，90后在拍摄个性婚纱照的时候也会选择
+						  一些自己较为喜欢而风格又......</p>
+						  <p>READ MORE TIPS++</p>
+					  </li>
+					  <li>
+						  <p>520求婚词</p>
+						  <p>求婚是一件很浪漫很美好的事情，但是求婚的方式有很多，国外求婚是恶搞，而国风
+						  求婚是浪漫温馨的.....</p>
+						  <p>READ MORE TIPS++</p>
+					  </li>
+					  <li>
+						  <p>拍婚纱照时新娘如何来摆POSE </p>
+						  <p>或许生活中许多女孩子都是摆POSE高手，无需很多修饰，不刻意做作，照片里的形象自然天成,
+							  但婚纱照有....</p>
+						  <p>READ MORE TIPS++</p>
+					  </li>
+					  <li>
+						  <p>夏季拍婚纱照如何选择服装 </p>
+						  <p>夏季拍婚纱照如何选择服装？夏天到了，大好河山的美景都尽收眼底了，在这样一个
+						  充满繁盛生命力的季节，拍.....</p>
+						  <p>READ MORE TIPS++</p>
+					  </li>
+					  <li>
+						  <p>婚纱照的故事</p>
+						  <p>孔雀妈妈的祖传遗训 这天是腊月二十八 孔雀国的两只百姓孔雀要结婚了。母孔雀临出嫁前
+						  她的妈妈对她说:.......
+						  </p>
+						  <p>READ MORE TIPS++</p>
+					  </li>
+				  </ul>
+			  </div>
+			  <div class="clear"></div>
+			  </div>
+        
+			  <div id="footer">
+
+			  <footer  class="clear">
+				  <!-- <img src="imgs/footer_bottom.jpg"/> -->
+				  <canvas id="c1" width="1300" height="309"></canvas>
+				  <p id="p1">Copyright &copy;2016-2026 HappyMoment PHOTO CO.,LTD.</p>
+				  <p>版权所有：幸福瞬间摄影工作室 2016深圳婚纱摄影 婚纱照片欣赏 </p>
+				  <p>http:www.happymoment.com 服务热线：13423932408</p>
+				  <a href="#totop">
+					  返回顶部
+				  </a>
+				  
+				  <audio src="rec/1.mp3" autoplay loop ></audio>
+				  
+			  </footer>
+			  </div>
+			  <script src="js/jquery-1.11.3.js"></script>
+			  <script src="js/bootstrap.min.js"></script>
+			 <script src="js/carousel.js"></script>			 
+		   <script src="js/HappyMoment.js"></script>
+		   <script>
+			var imgs=[
+	"imgs/nl_1.jpg",
+	"imgs/nl_2.jpg",
+	"imgs/nl_3.jpg",
+	"imgs/nl_4.jpg",
+	"imgs/nl_5.jpg",
+
+];
+
+$("#imgList").carousel(imgs, 500, 2000);
+</script>
+
+		 
+			</body>
 </html>
